@@ -19,3 +19,8 @@ assert("asc_2", asc(2)=50)
 assert("asc_3", asc("ABCD")=65)
 
 print "DONE"
+' test date conversion
+d = CDate("2020-01-31")
+assert("cdbl_5", cdbl(d)=clng(d))
+
+print "DONE"
