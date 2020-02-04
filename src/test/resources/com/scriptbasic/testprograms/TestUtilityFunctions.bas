@@ -9,4 +9,8 @@ assert("clng_1", clng(2)=2)
 assert("clng_2", clng("2")=2)
 assert("clng_3", clng(true)=1)
 
+' test date conversion
+d = CDate("2020-01-31")
+assert("cdbl_5", cdbl(d)=clng(d))
+
 print "DONE"
