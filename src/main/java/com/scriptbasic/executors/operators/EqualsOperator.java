@@ -7,4 +7,9 @@ public class EqualsOperator extends AbstractCompareOperator {
         return comparisonResult == 0;
     }
 
+    @Override
+    protected Boolean compareEmptyValues() {
+        return true;
+    }
+
 }
