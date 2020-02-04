@@ -6,4 +6,5 @@ public class EqualsOperator extends AbstractCompareOperator {
     protected boolean decide(int comparisonResult) {
         return comparisonResult == 0;
     }
+
 }
