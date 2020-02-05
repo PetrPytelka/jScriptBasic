@@ -23,8 +23,6 @@ public abstract class AbstractCompareOperator extends
         return decide(comparisonResult);
     }
 
-    protected abstract Boolean compareEmptyValues();
-
     @Override
     protected RightValue evaluateOn(final RightValue leftOperand,
                                     final RightValue rightOperand) throws BasicRuntimeException {
@@ -74,9 +72,6 @@ public abstract class AbstractCompareOperator extends
         if (leftOperand == BasicEmptyValue.EMPTY_VALUE && rightOperand == BasicEmptyValue.EMPTY_VALUE) {
             return new BasicBooleanValue(compareTo(BasicEmptyValue.EMPTY_VALUE.getNumericValue(),
                                                    BasicEmptyValue.EMPTY_VALUE.getNumericValue()));
-        }
-        if (leftOperand == BasicEmptyValue.EMPTY_VALUE && rightOperand == BasicEmptyValue.EMPTY_VALUE) {
-            return new BasicBooleanValue(compareEmptyValues());
         }
         throw new BasicRuntimeException("Type mismatch, left operand: " + leftOperand +
                 ", right operand: " + rightOperand);
